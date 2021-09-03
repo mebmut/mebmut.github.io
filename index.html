@@ -13,12 +13,12 @@
         <div class="sidebar-wrapper">
             <div class="links">
                 <div class="user"></div>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#services">Services</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+                <a href="#home" class="home-link">Home</a>
+                <a href="#about" class="about-link">About</a>
+                <a href="#skills" class="skills-link">Skills</a>
+                <a href="#services" class="services-link">Services</a>
+                <a href="#projects" class="projects-link">Projects</a>
+                <a href="#contact" class="contact-link">Contact</a>
             </div>
         </div>
         <div class="content-wrapper">
@@ -258,7 +258,7 @@
                             background-size: cover;
                             ">
                             <p>Full Js slider</p>
-                            <a href=""><i class="fa fa-eye"></i>View</a>
+                            <a href="https://mebmut.github.io/wizeSlider/"><i class="fa fa-eye"></i>View</a>
                        </div>
                        <div class="project" style="
                             background-image: url(images/2.jpg);
@@ -318,6 +318,39 @@
                        </div>
                     </div>
                 </div>
+            </section>
+            <section id="contact">
+                <div class="section-title">
+                    <h1 class="title-shadow">contact</h1>
+                    <h2 class="title">get in tough</h2>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                   Quia, possimus porro sunt vitae libero nesciunt 
+                   exercitationem perferendis, accusantium ad autem molestiae
+                    quisquam. Quaerat tempora mollitia eos excepturi, 
+                    optio officia quasi!</p>
+                <div class="section-container">
+                    <div class="left-side">
+                        <h1>feel free to ask me</h1>
+                        <p>you can get in tough with me using any of the
+                            communication mediaum bellow for any queries or 
+                            colaborations
+                        </p>
+                        <p class="split"><i class="fa fa-envelope-open"></i>
+                            <span>Email Me <small>mebmut@gmail.com</small></span>
+                        </p>
+                        <p class="split"><i class="fa fa-phone"></i>
+                            <span>call me <small>+260966480856</small></span>
+                        </p>
+                        <p class="social-link">
+                            <a target="_blank" href="https://web.facebook.com/maybin.nonde.mutale"><i class="fab fa-facebook"></i></a>
+                            <a target="_blank" href="https://twitter.com/mebmut"><i class="fab fa-twitter"></i></a>
+                            <a target="_blank" href="https://github.com/mebmut"><i class="fab fa-github"></i></a>
+                            <a target="_blank" href="https://www.youtube.com/channel/UCZ7-17U9KsNCJAUU4jUGyDg"><i class="fab fa-youtube"></i></a>
+                        </p>
+                    </div>
+                    <div class="right"></div>
+                </div>
             </section>       
         </div>
     </div>
@@ -328,8 +361,41 @@
             skill[i].style.width = size;
             skill[i].innerHTML = size;
         }
-        const body = document.querySelector('body');
-        body.classList.toggle('theme');
+        
+        let section = document.querySelectorAll('section');
+        window.addEventListener('scroll',()=>{
+            for (i = 0; i < section.length; i++) {
+                let sectionPosition = section[i].getBoundingClientRect().top;
+                let currentPosition = window.innerHeight / 3;
+                let link = document.querySelector('.'+section[i].id+'-link');
+               
+                if (sectionPosition < currentPosition) {
+                    if (isElementInViewport(section[i])) {
+                        link.classList.add('active');
+                    }else{
+                        link.classList.remove('active');
+                    }
+                }else{
+                    link.classList.remove('active');
+                }
+            }
+        });
+
+        function isElementInViewport(el){
+            if (typeof jQuery === "function" && el instanceof jQuery) {
+                el = el[0];
+            }
+            var rect = el.getBoundingClientRect();
+            return(rect.top <= 0 && rect.bottom >= 0) 
+            || (rect.bottom >= (window.innerHeight || 
+            document.documentElement.clientHeight) && 
+            rect.top <= (window.innerHeight || 
+            document.documentElement.clientHeight)) || 
+            (rect.top >= 0 && rect.bottom <= (window.innerHeight 
+            || document.documentElement.clientHeight))
+        }
+       
+
     </script>
 </body>
 </html>

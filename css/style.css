@@ -35,6 +35,7 @@ body{
     background:var(--primeColor);
     font-family: Arial, Helvetica, sans-serif;
 }
+
 html{
     scroll-behavior: smooth;
 }
@@ -79,7 +80,7 @@ section{
     font-weight: 900;
     text-align: center;
     position: absolute;
-    color: rgba(46, 45, 45, 0.353);
+    color: rgba(77, 76, 76, 0.353);
 }
 .section-title .title{
     z-index: 100;
@@ -344,11 +345,91 @@ section{
     background: rgb(29,29,29);
     transition: 1s ease-in-out;
 }
+.sidebar-wrapper a.active{
+    background: var(--primeColor);
+}
 .sidebar-wrapper a:hover{
     background: var(--linkGradient);
 }
 .sidebar-wrapper .user{
     display: none;
+}
+.social-link{
+    gap: 1rem;
+    display: flex;
+    padding: 5px;
+}
+.social-link a{
+    color: white;
+    padding-top: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 10px black;
+}
+.social-link a:hover{
+    background: var(--bgGradient);
+}
+p.split{
+    gap: 1rem;
+    display: flex;
+    margin: 2rem 0;
+    padding-left: 20px;
+    position: relative;
+    width: 50%;
+    padding-bottom: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.082);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.089);
+}
+p.split::after{
+    top: 0;
+    content: '';
+    width: 20px;
+    height: 20px;
+    left: -10px;
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    box-shadow: 5px -5px 10px black;
+    background: var(--pinGradient);
+    border: 1px solid rgba(255, 255, 255, 0.082);
+}
+p.split i{
+    font-size: 1.7rem;
+    color: var(--introText);
+}
+p.split span{
+    gap: .5rem;
+    display: grid;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.911);
+    text-transform: capitalize;
+}
+p.split small{
+    margin-left: 10px;
+    color: rgba(255, 255, 255, 0.568);
+}
+.social-link a i{
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 1.2rem;
+}
+.left-side{
+    margin-left: 2rem;
+}
+.left-side h1{
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.left-side p{
+    color: rgba(255, 255, 255, 0.829);
+    letter-spacing: 1px;
+    font-size: 13px;
+    line-height: 1.5;
 }
 @media(min-width:500px){
     section{
@@ -410,7 +491,7 @@ section{
         justify-self: center;
         align-self: center;
         border-radius: 50%;
-        background: url(images/user.jpg);
+        background: url(../images/user.jpg);
         margin: 1rem auto;
         background-position: top;
         background-size: cover;
