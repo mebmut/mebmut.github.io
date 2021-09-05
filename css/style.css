@@ -327,7 +327,7 @@ section{
     z-index: 1000;
 }
 .sidebar-wrapper{
-    display: grid;
+    display: none;
     position: fixed;
     top: 0;
     width: 100%;
