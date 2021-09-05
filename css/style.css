@@ -301,6 +301,7 @@ section{
     text-transform: capitalize;
     text-shadow: 0px 0px 5px black;
 }
+
 .project a{
     color: var(--textColor);
     border-radius: .5rem;
@@ -319,8 +320,8 @@ section{
 .project:hover{
     background-color: transparent;
     background-blend-mode: unset;
-    transform: scale(110%);
-    z-index: 100;
+    transform: scale(130%);
+    z-index: 1000;
 }
 .sidebar-wrapper{
     display: grid;
@@ -431,6 +432,75 @@ p.split small{
     font-size: 13px;
     line-height: 1.5;
 }
+.right-side input{
+   padding: 10px;
+   outline: none;
+   border: 1px solid rgba(255, 255, 255, 0.082);
+   width: 100%;
+   display: inline-block;
+   color: gray;
+   font-size: 1rem;
+   letter-spacing: 1px;
+   margin-top: .5rem;
+   background: var(--primeColor);
+   border-radius: .5rem;
+   box-shadow: -5px 5px 10px black;
+}
+.right-side input:active{
+    background: var(--secondColor);
+}
+p.intro{
+    padding: 1rem;
+    color: rgba(255, 255, 255, 0.295);
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    border: 1px solid rgba(255, 255, 255, 0.021);
+    border-radius: 1rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.233);
+}
+textarea{
+    width: 100%;
+    margin-top: .5rem;
+    border-radius: .5rem;
+    outline: none;
+    color: gray;
+    padding: 10px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    background: var(--primeColor);
+    box-shadow: -5px 5px 10px black;
+    border: 1px solid rgba(255, 255, 255, 0.089);
+}
+form{
+    padding: 1rem;
+}
+form h2{
+    color: wheat;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button{
+    outline: none;
+    border: none;
+    border-radius: .5rem;
+    padding: 5px 15px;
+    float: right;
+    cursor: pointer;
+    font-size: 1rem;
+    color: rgb(26, 24, 24);
+    text-transform: capitalize;
+    background: var(--introText);
+    box-shadow: 0px 0px 10px black;
+}
+button:hover{
+    color: white;
+    background: var(--pinGradient);
+}
 @media(min-width:500px){
     section{
         width: 100%;
@@ -455,11 +525,11 @@ p.split small{
     }
     .service{
         width: 250px;
-        height: 250px;
+        height: 220px;
     }
     .project{
         width: 250px;
-        height: 300px;
+        height: 200px;
     }
 }
 @media(min-width:720px){
